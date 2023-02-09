@@ -11,7 +11,7 @@ df = pd.read_html(dict_file)[0]
 df = df.drop(index=[0,1,2,426, 427], columns = [3,4,5])
 df = df.reset_index(drop=True)
 
-rng = np.random.default_rng(42)
+rng = np.random.default_rng()
 r_ind = rng.integers(0, len(df))
 random_bird = df.loc[r_ind]
 english_name = random_bird[0]
