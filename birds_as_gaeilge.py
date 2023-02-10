@@ -19,6 +19,9 @@ def get_wiki_image(search_term):
     """
     try:
         result = wikipedia.search(search_term, results = 1)
+        if len(result) == 0:
+            new_search = wikipedia.suggest(search_term)
+            result = wikipedia.search(new_search, results = 1)
         wikipedia.set_lang('en')
         wkpage = wikipedia.WikipediaPage(title = result[0])
         title = wkpage.title
