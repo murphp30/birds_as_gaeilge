@@ -5,6 +5,13 @@ import pandas as pd
 
 from pathlib import Path
 
+from mastodon import Mastodon
+
+mastodon = Mastodon(
+    access_token = 'token.secret',
+    api_base_url = 'https://mastodon.ie/'
+)
+
 dict_file = Path("EnglishLatinIrish.htm")
 df = pd.read_html(dict_file)[0]
 # remove fluff
@@ -18,7 +25,7 @@ english_name = random_bird[0]
 latin_name = random_bird[1]
 irish_name = random_bird[2]
 
-print("The {} ({}) is known as {} as Gaeilge.".format(
+mastodon.status_post("The {} ({}) is known as {} as Gaeilge.".format(
     english_name,
     latin_name,
     irish_name
