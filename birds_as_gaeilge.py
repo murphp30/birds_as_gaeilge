@@ -61,7 +61,7 @@ urllib.request.urlretrieve(bird_image_url, bird_image_file_name)
 bird_page = wikipedia.page(latin_name)
 
 media = mastodon.media_post(bird_image_file_name, description="An image of {}, presumably.".format(english_name))
-mastodon.status_post("The {} ({}, {}) is known as {} as Gaeilge.".format(
+mastodon.status_post("The {} ({}, {}) is known as {} as Gaeilge #Birds #Gaeilge.".format(
     english_name,
     latin_name,
     bird_page.url,
@@ -69,3 +69,10 @@ mastodon.status_post("The {} ({}, {}) is known as {} as Gaeilge.".format(
     ),
     media_ids=media
 )
+
+# print("The {} ({}, {}) is known as {} as Gaeilge.".format(
+#     english_name,
+#     latin_name,
+#     bird_page.url,
+#     irish_name
+#     ))

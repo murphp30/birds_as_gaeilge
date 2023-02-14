@@ -7,3 +7,4 @@ List of bird names comes from Colm Ó Caomhánaigh's [Dictionary of Bird Names i
 ## TODO
 - Improve wording of posts
 - something about how this is the "standard name"
+- Unnecessary SQL database of birds?
